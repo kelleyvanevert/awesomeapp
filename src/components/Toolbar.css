@@ -1,0 +1,20 @@
+.Toolbar {
+  padding: 1rem;
+  background: #eee;
+
+  display: flex;
+}
+
+.Toolbar .logo {
+  padding: 0.5rem;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.Toolbar .spacer {
+  flex-grow: 1;
+}
+
+.Toolbar button {
+  margin-left: 1rem;
+}

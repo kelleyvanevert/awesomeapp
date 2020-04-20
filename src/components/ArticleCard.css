@@ -1,0 +1,8 @@
+.ArticleCard {
+  border-top: 2px dashed #ddd;
+  padding-bottom: 1rem;
+}
+
+.ArticleCard h2 {
+  margin: 2rem 0 1rem 0;
+}
