@@ -4,45 +4,59 @@ import "./App.css";
 import Toolbar from "./components/Toolbar";
 import ArticleCard from "./components/ArticleCard";
 
-// component = function that returns JSX
-
 /**
  *
- * function component definition
+ * primitive data types:
+ * - true, false
+ * - "hello", 'hello', `hello mr ${name}`
+ * - 42, -1, 3.14
+ * - null, undefined
  *
- * function MyComponent (props) {
- *   return <div>{props.title}</div>;
- * }
+ * compound data types:
+ * - arrays [1, 2, 3, {}] <- very powerful
+ * - objects { name: "T-Rex", height: 10, scary: true, eats: [] }
  *
+ * JSX
  *
- * component instance
- *
- * <MyComponent title="Hello there" />
+ * functions
+ * function sayHello() {}
+ * const sayHello = () => {};
  *
  */
 
 function App() {
+  const articles = [
+    {
+      title: "Components and props",
+      rubrik: "react",
+      tags: ["react", "props", "beginner", "tutorial"],
+      text:
+        "Now let's start playing around with the main building block of React applications: the component. React components are the reusable blocks of UI that you'll use to create ever larger and more complex user interfaces from."
+    },
+    {
+      title: "Thinking in components",
+      rubrik: "component-based design",
+      tags: [],
+      text: "bla bla"
+    }
+  ];
+
   return (
     <div>
       <Toolbar />
       <main>
         <h1>Some awesome app</h1>
+        <p>{<span>hello</span>}</p>
 
-        <ArticleCard
-          title="Components and props"
-          rubrik="react"
-          text="Now let's start playing around with the main building block of React applications: the component. React components are the reusable blocks of UI that you'll use to create ever larger and more complex user interfaces from."
-        />
-        <ArticleCard
-          title="Thinking in components"
-          rubrik="component-based design"
-          text="In this chapter, we're going to break down a large UI into smaller bits: components. Breaking down a UI into reusable bits is one of the main techniques that React developers use to structure large applications: composition."
-        />
-        <ArticleCard
-          title="Components are awesome"
-          rubrik="repetition"
-          text="Because they allow you to reuse blocks of HTML structure"
-        />
+        {articles.map(article => {
+          return (
+            <ArticleCard
+              title={article.title}
+              tags={article.tags}
+              text={article.text}
+            />
+          );
+        })}
       </main>
     </div>
   );
